@@ -14,11 +14,28 @@ namespace Assignment_2
         public StockList MergeList(StockList listToMerge)
         {
             StockList resultList = new StockList();
-
-            // write your implementation here
-
+            if (this.IsEmpty())
+            {
+                Console.WriteLine("List is Empty");
+            }
+            else
+            {
+                StockNode c1 = this.head;
+                while (c1 != null)
+                {
+                    resultList.AddStock(c1.StockHolding);
+                    c1 = c1.Next;
+                }
+                StockNode c2 = listToMerge.head;
+                while (c2 != null)
+                {
+                    resultList.AddStock(c2.StockHolding);
+                    c2 = c2.Next;
+                }
+            }                                                
             return resultList;
         }
+        
 
         //param        : NA
         //summary      : finds the stock with most number of holdings
